@@ -11,7 +11,54 @@ namespace KTLT03
         protected string idQL;
         protected int monthQL;
         protected int yearQL;
-    }
 
-    public string 
+        public string IdQL
+        {
+            get { return this.idQL; }
+            set
+            {
+                if (value.Length > 3)
+                {
+                    this.idQL = value;
+                }
+                else
+                {
+                    this.idQL = "NoId";
+                }
+            }
+        }
+
+        public int MonthQL
+        {
+            get { return this.monthQL; }
+            set
+            {
+                if (value >= 1 && value <= 12)
+                {
+                    this.monthQL = value;
+                }
+                else
+                {
+                    this.monthQL = 1;
+                }
+            }
+        }
+
+        public int YearQL
+        {
+            get { return this.yearQL; }
+            set
+            {
+                if (value >= 2000)
+                {
+                    this.yearQL = value;
+                }
+                else
+                {
+                    this.yearQL = DateTime.Now.Year;
+                }
+            }
+        }
+    }
+        
 }
